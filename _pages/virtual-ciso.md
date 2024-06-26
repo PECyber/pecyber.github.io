@@ -1,8 +1,8 @@
 ---
 title: Virtual CISO (vCISO) Services
 permalink: /virtual-ciso/
-description: Our Virtual CISO services are offered for short-term or long-term engagements, providing expert security advice, direction and strategy.
-keywords: Virtual CISO, security advice, security strategy, Incident CISO, cybersecurity incident management, ProtectiveEdge Cyber
+description: "Our Virtual CISO services are offered for short-term or long-term engagements, providing expert security advice, direction and strategy."
+keywords: "Virtual CISO, security advice, security strategy, Incident CISO, cybersecurity incident management, ProtectiveEdge Cyber"
 sidebar:
   nav: "services"
 ---
