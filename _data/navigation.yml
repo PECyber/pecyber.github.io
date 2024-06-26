@@ -7,3 +7,15 @@ main:
     url: /about/
   - title: "Contact Us"
     url: /contact/
+
+services:
+  - title: PECyber Services
+    children:
+      - title: "E8 Assessment"
+        url: /e8/
+      - title: "Cloud Security"
+        url: /cloud-security/
+      - title: "Virtual CISO"
+        url: /virtual-ciso/
+      - title: "Purple Team"
+        url: purple-team/
