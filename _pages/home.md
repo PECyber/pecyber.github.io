@@ -4,8 +4,6 @@ keywords: "cybersecurity, Australian cybersecurity, cyber consulting, state gove
 permalink: /
 ---
 
-# Welcome to ProtectiveEdge Cyber
-
 Your trusted partner in cybersecurity consulting, based in Australia.
 
 ## Our Services
