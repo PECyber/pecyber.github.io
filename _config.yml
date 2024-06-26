@@ -12,20 +12,20 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "dirt" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en-US"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
 title                    : "PECyber"
 title_separator          : "|"
-subtitle                 : # site tagline that appears below site title in masthead
+subtitle                 : "Your trusted Cyber Security partner in Australia"
 name                     : "Your Name"
 description              : "An amazing website."
 url                      : "https://pecyber.com.au"
 baseurl                  : ""
 repository               : "PECyber/pecyber.github.io"
-teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+teaser                   : # path of fallback teaser image, e.g. "/assets/logo_basic.png"
 logo                     : "/assets/logo_basic.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
