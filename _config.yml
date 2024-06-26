@@ -323,3 +323,4 @@ defaults:
       comments: # true
       share: false
       related: false
+      permalink: /:title/
