@@ -17,7 +17,7 @@ ProtectiveEdge Cyber offers a wide range of services, including:
 
 *    Risk Assessments - Comprehensive evaluations to identify vulnerabilities and improve your security posture.
 *    Compliance Services - Ensuring adherence to critical standards such as the ASD Essential 8, IRAP, ISO27001, and more.
-*    Cyber Security Consulting - Cybersecurity Consulting:</strong> Expertise in cloud security, incident response, and virtual CISO services to provide strategic direction and robust defences.
+*    Cyber Security Consulting - Expertise in cloud security, incident response, and virtual CISO services to provide strategic direction and robust defences.
 *    Security Operations Support - Enhancing your cybersecurity capabilities with advanced threat monitoring, purple team exercises, and SOC emulation.
 
 ## Our Approach
