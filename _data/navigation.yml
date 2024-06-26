@@ -18,4 +18,10 @@ services:
       - title: "Virtual CISO"
         url: /virtual-ciso/
       - title: "Purple Team"
-        url: purple-team/
+        url: /purple-team/
+      - title: "Audit Support"
+        url: /audit-support/
+      - title: "Consulting Services"
+        url: /cyber-security-consulting/
+
+        
