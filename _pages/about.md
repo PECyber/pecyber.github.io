@@ -1,8 +1,9 @@
-------
-
-
-
------
+---
+title: About PECyber
+description: "ProtectiveEdge Cyber is an Australian-based cybersecurity consulting firm offering comprehensive services to state and local governments, and SMEs."
+keywords: "cybersecurity, Australian cybersecurity, cyber consulting, state government cybersecurity, local government cybersecurity, SME cybersecurity, IRAP, ISM, essential 8, e8, ASD, compliance"
+permalink: /about/
+---
 # About ProtectiveEdge Cyber
 At ProtectiveEdge Cyber, we are dedicated to enhancing the cybersecurity stance of Australian businesses and government entities. Our mission is to protect our clients against ever-evolving cyber threats with tailored, robust, and comprehensive security solutions.
 
