@@ -1,6 +1,8 @@
 ---
 title: Cloud Security Services
 permalink: /cloud-security/
+sidebar:
+  nav: "services"
 ---
 Your partner in ensuring secure and efficient cloud environments with ProtectiveEdge Cyber.
 
