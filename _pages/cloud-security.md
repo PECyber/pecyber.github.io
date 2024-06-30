@@ -20,4 +20,4 @@ We assist in hardening your cloud systems to protect against threats and vulnera
 ## General Cloud Security Advice
 Whether you're new to the cloud or looking to improve your existing setup, we offer comprehensive cloud security advice. Our team provides insights and recommendations to help you navigate the complexities of cloud security and ensure your data and applications are safe.
 
-[!Cloud_Security](/assets/cloud_security.jpg "Cloud Security")
+![Cloud_Security](/assets/cloud_security.jpg "Cloud Security")
