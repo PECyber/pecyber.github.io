@@ -8,6 +8,8 @@ sidebar:
 ---
 Comprehensive and tailored cyber security consulting to meet your organisational needs and enhance your security posture.
 
+![Consult](/assets/consult.jpeg "Consult")
+
 ## Procurement Support
 Our procurement assistance service helps your organisation acquire the right security solutions that meet your needs and compliance requirements. We provide expert advice on selecting and procuring cybersecurity tools, software, and services, ensuring that you invest in the most effective and reliable products available
 
