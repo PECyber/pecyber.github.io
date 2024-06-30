@@ -10,7 +10,7 @@ sidebar:
 ## Audit Support
 Our audit support services are designed to help your organisation prepare for various types of audits, including IRAP assessments, ISO27001 audits, and NIST or CSF audits. We provide thorough consulting and guidance to ensure your readiness for a successful audit outcome.
 
-[!audit_support](/assets/audit_support.jpg "Audit Support")
+![audit_support](/assets/audit_support.jpg "Audit Support")
 
 ## IRAP Preparation
 Preparing for an Information Security Registered Assessors Program (IRAP) assessment can be daunting. Our team assists you in understanding the requirements and ensuring that your systems and processes are aligned with the necessary standards to achieve compliance.
