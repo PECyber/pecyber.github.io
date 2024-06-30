@@ -11,7 +11,7 @@ Your trusted partner in cybersecurity consulting, based in Australia.
 *   E8 Assessments
 *   Cyber Security Consulting
 *   Purple Team Exercises
-*   Cloud Security Review
+*   Cloud Security Review <img src="/assets/security.jpg" align="right" alt="drawing" style="width:500px;"/>
 *   Virtual CISO (vCISO)
 *   Audit Preparation and Support
 
