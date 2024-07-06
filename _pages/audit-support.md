@@ -1,7 +1,7 @@
 ---
 title: Audit Support
 description: "ProtectiveEdge Cyber offers audit support services, ensuring your organisation is prepared for certification, including IRAP assessment, ISO27001 audit and more."
-keywords: "Audit support, IRAP assessment, ISO27001 audit, NIST audit, CSF audit, audit preparedness, ProtectiveEdge Cyber"
+keywords: "Cybersecurity, Cyber Security Consulting, Australian Cybersecurity, E8 Assessment, Purple Team Exercises, Cloud Security, Virtual CISO, Audit Preparation, IRAP Compliance, ISO27001, NIST Audit, Security Hardening, ASD Essential 8, Proactive Cybersecurity, Reactive Cybersecurity, Security Posture, Cybersecurity Defences, Cybersecurity Leadership, Cybersecurity Services, Consulting Services"
 permalink: /audit-support/
 sidebar:
   nav: "services"
