@@ -6,8 +6,9 @@ permalink: /
 
 Your trusted partner in cybersecurity consulting, based in Australia.
 
-## Our Services 
 <img src="/assets/security.jpg" align="right" alt="drawing" style="width:500px;"/>
+
+## Our Services 
 
 *   E8 Assessments
 *   Cyber Security Consulting
