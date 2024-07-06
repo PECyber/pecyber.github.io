@@ -6,7 +6,7 @@ permalink: /
 
 Your trusted partner in cybersecurity consulting, based in Australia.
 
-<img src="/assets/security.jpg" align="right" alt="drawing" style="width:500px;"/>
+<img src="/assets/security.jpg" align="centre" alt="drawing" style="width:450px;"/>
 
 ## Our Services 
 
