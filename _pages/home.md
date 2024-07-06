@@ -6,12 +6,12 @@ permalink: /
 
 Your trusted partner in cybersecurity consulting, based in Australia.
 
-## Our Services
+## Our Services <img src="/assets/security.jpg" align="right" alt="drawing" style="width:500px;"/>
 
 *   E8 Assessments
 *   Cyber Security Consulting
 *   Purple Team Exercises
-*   Cloud Security Review <img src="/assets/security.jpg" align="right" alt="drawing" style="width:500px;"/>
+*   Cloud Security Review 
 *   Virtual CISO (vCISO)
 *   Audit Preparation and Support
 
