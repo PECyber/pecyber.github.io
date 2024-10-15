@@ -1,6 +1,6 @@
 ---
 title: Newsletter Signup
-description: "Signup for E8 Assistance"
+description: "Signup to stay informed on the Essential8"
 keywords: "Cybersecurity, Cyber Security Consulting, Australian Cybersecurity, E8 Assessment, Purple Team Exercises, Cloud Security, Virtual CISO, Audit Preparation, IRAP Compliance, ISO27001, NIST Audit, Security Hardening, ASD Essential 8, Proactive Cybersecurity, Reactive Cybersecurity, Security Posture, Cybersecurity Defences, Cybersecurity Leadership, Cybersecurity Services, Consulting Services"
 permalink: /signup/
 ---
