@@ -7,5 +7,5 @@ permalink: /signup/
 
 ## Stay Informed on the ASD Essential 8
 
-Sign up to receive notifications and stay up to date with best practices for the ASD Essential 8.
+Sign up to receive notifications from PECyber and stay up to date with best practices for the ASD Essential 8.
 <iframe src="https://share.hsforms.com/14Zh5J0PbTFKxsBxsHGrO2Qsezf6" width="100%" height="1200" frameborder="0" allowfullscreen></iframe>
