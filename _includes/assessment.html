@@ -2,7 +2,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cybersecurity Readiness Quiz</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -40,10 +39,10 @@
             align-items: center;
             margin-bottom: 5px;
             margin-right: 15px;
-            text-align: left; /* Ensure the label text is left-aligned */
+            text-align: left;
         }
         input[type="radio"] {
-            margin-right: 5px; /* Add space between radio button and text */
+            margin-right: 5px;
         }
     </style>
 </head>
@@ -95,36 +94,51 @@
             <input type="email" name="email" required placeholder="Enter your email address">
         </div>
 
-        <button type="button" class="btn" onclick="calculateScore()">Submit</button>
+        <button type="button" class="btn" onclick="submitForm()">Submit</button>
     </form>
 
     <div id="results" class="results"></div>
 
     <script>
-        function calculateScore() {
-            const form = document.getElementById('quizForm');
+        function submitForm() {
+            const form = document.getElementById('readiness-assessment');
             const formData = new FormData(form);
             let score = 0;
 
+            // Calculate score
             for (let [key, value] of formData.entries()) {
                 if (key.startsWith('q')) {
                     score += parseInt(value);
                 }
             }
 
+            // Show score result to user
             const resultsDiv = document.getElementById('results');
             resultsDiv.style.display = 'block';
-
             if (score >= 8) {
-                resultsDiv.innerHTML = `<h2>Congratulations!</h2>
-                <p>Your cybersecurity measures are strong, but continuous improvement is always beneficial. Keep up the great work!</p>`;
+                resultsDiv.innerHTML = `<h2>Congratulations!</h2><p>Your cybersecurity measures are strong, but continuous improvement is always beneficial. Keep up the great work!</p>`;
             } else if (score >= 4) {
-                resultsDiv.innerHTML = `<h2>You’re on the right track!</h2>
-                <p>There are significant areas for improvement. Let us help you strengthen your defences. <a href='#'>Contact us</a> for a consultation.</p>`;
+                resultsDiv.innerHTML = `<h2>You’re on the right track!</h2><p>There are significant areas for improvement. Let us help you strengthen your defences. <a href='#'>Contact us</a> for a consultation.</p>`;
             } else {
-                resultsDiv.innerHTML = `<h2>Your organisation is at risk!</h2>
-                <p>You need immediate improvements to your cybersecurity posture. <a href='#'>Contact us</a> today for a free assessment.</p>`;
+                resultsDiv.innerHTML = `<h2>Your organisation is at risk!</h2><p>You need immediate improvements to your cybersecurity posture. <a href='#'>Contact us</a> today for a free assessment.</p>`;
             }
+
+            // Submit form to Formspree using Fetch API
+            fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    console.log('Form successfully submitted!');
+                } else {
+                    console.log('There was an issue with the form submission');
+                }
+            }).catch(error => {
+                console.error('Error:', error);
+            });
         }
     </script>
 </body>
