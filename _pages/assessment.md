@@ -1,0 +1,10 @@
+---
+title: Cyber Readiness Quiz
+description: "ProtectiveEdge Cyber is an Australian-based cybersecurity consulting firm offering comprehensive services to state and local governments, and SMEs."
+keywords: "cybersecurity, Australian cybersecurity, cyber consulting, state government cybersecurity, local government cybersecurity, SME cybersecurity, IRAP, ISM, essential 8, e8, ASD, compliance"
+permalink: /contact/
+---
+Please Complete the below assessment to guage your Cyber Readiness!
+PECyber will be in contact after you complete the assessment.
+
+{% include assessment.html %}
