@@ -57,9 +57,9 @@
         </div>
 
         <div class="question">
-            <p><strong>2. Do you use Multi-Factor Authentication (MFA) for critical systems?</strong></p>
+            <p><strong>2. Do you use Multi-Factor Authentication (MFA) for ALL systems?</strong></p>
             <label><input type="radio" name="q2" value="2"> Yes</label>
-            <label><input type="radio" name="q2" value="1"> Only for a few systems</label>
+            <label><input type="radio" name="q2" value="1"> Only for critical systems</label>
             <label><input type="radio" name="q2" value="0"> No</label>
         </div>
 
@@ -79,9 +79,9 @@
 
         <div class="question">
             <p><strong>5. How do you manage user privileges?</strong></p>
-            <label><input type="radio" name="q5" value="2"> Least privilege</label>
+            <label><input type="radio" name="q5" value="2"> Completely Limited</label>
             <label><input type="radio" name="q5" value="1"> Some restrictions</label>
-            <label><input type="radio" name="q5" value="0"> Broad access</label>
+            <label><input type="radio" name="q5" value="0"> We Don't Manage Access</label>
         </div>
 
         <div class="question">
@@ -118,9 +118,9 @@
             if (score >= 8) {
                 resultsDiv.innerHTML = `<h2>Congratulations!</h2><p>Your cybersecurity measures are strong, but continuous improvement is always beneficial. Keep up the great work!</p>`;
             } else if (score >= 4) {
-                resultsDiv.innerHTML = `<h2>You’re on the right track!</h2><p>There are significant areas for improvement. Let us help you strengthen your defences. <a href='#'>Contact us</a> for a consultation.</p>`;
+                resultsDiv.innerHTML = `<h2>You’re on the right track!</h2><p>There are some areas for improvement. Let us help you strengthen your defences. <a href='/contact/'>Contact us</a> for a consultation.</p>`;
             } else {
-                resultsDiv.innerHTML = `<h2>Your organisation is at risk!</h2><p>You need immediate improvements to your cybersecurity posture. <a href='#'>Contact us</a> today for a free assessment.</p>`;
+                resultsDiv.innerHTML = `<h2>Your organisation is at risk!</h2><p>You need immediate improvements to your cybersecurity posture. <a href='/contact/'>Contact us</a> today for a free assessment.</p>`;
             }
 
             // Submit form to Formspree using Fetch API
