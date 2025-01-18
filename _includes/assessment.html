@@ -98,47 +98,56 @@
 
     <div id="results" class="results"></div>
 
-    <script>
-        function submitForm() {
-            const form = document.getElementById('readiness-assessment');
-            const formData = new FormData(form);
-            let score = 0;
+   <script>
+    function submitForm(event) {
+        event.preventDefault(); // Prevent the default form submission
 
-            // Calculate score
-            for (let [key, value] of formData.entries()) {
-                if (key.startsWith('q')) {
-                    score += parseInt(value);
-                }
+        const form = document.getElementById('readiness-assessment');
+        const formData = new FormData(form);
+        let score = 0;
+
+        // Calculate score
+        for (let [key, value] of formData.entries()) {
+            if (key.startsWith('q')) {
+                score += parseInt(value);
             }
-
-            // Show score result to user
-            const resultsDiv = document.getElementById('results');
-            resultsDiv.style.display = 'block';
-            if (score >= 8) {
-                resultsDiv.innerHTML = `<h2>Congratulations!</h2><p>Your cybersecurity measures are strong, but continuous improvement is always beneficial. Keep up the great work!</p>`;
-            } else if (score >= 4) {
-                resultsDiv.innerHTML = `<h2>You’re on the right track!</h2><p>There are some areas for improvement. Let us help you strengthen your defences. <a href='/contact/'>Contact us</a> for a consultation.</p>`;
-            } else {
-                resultsDiv.innerHTML = `<h2>Your organisation is at risk!</h2><p>You need immediate improvements to your cybersecurity posture. <a href='/contact/'>Contact us</a> today for a free assessment.</p>`;
-            }
-
-            // Submit form to Formspree using Fetch API
-            fetch(form.action, {
-                method: form.method,
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }).then(response => {
-                if (response.ok) {
-                    console.log('Form successfully submitted!');
-                } else {
-                    console.log('There was an issue with the form submission');
-                }
-            }).catch(error => {
-                console.error('Error:', error);
-            });
         }
-    </script>
+
+        // Show score result to user
+        const resultsDiv = document.getElementById('results');
+        resultsDiv.style.display = 'block';
+        if (score >= 8) {
+            resultsDiv.innerHTML = `<h2>Congratulations!</h2><p>Your cybersecurity measures are strong, but continuous improvement is always beneficial. Keep up the great work!</p>`;
+        } else if (score >= 4) {
+            resultsDiv.innerHTML = `<h2>You’re on the right track!</h2><p>There are some areas for improvement. Let us help you strengthen your defences. <a href='/contact/'>Contact us</a> for a consultation.</p>`;
+        } else {
+            resultsDiv.innerHTML = `<h2>Your organisation is at risk!</h2><p>You need immediate improvements to your cybersecurity posture. <a href='/contact/'>Contact us</a> today for a free assessment.</p>`;
+        }
+
+        // Submit form to Formspree using Fetch API
+        fetch(form.action, {
+            method: form.method,
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                console.log('Form successfully submitted!');
+                alert('Form submitted successfully. We will contact you soon.');
+            } else {
+                console.log('There was an issue with the form submission');
+                alert('Form submission failed. Please try again.');
+            }
+        }).catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again.');
+        });
+    }
+
+    // Attach the event listener to the form
+    document.getElementById('readiness-assessment').addEventListener('submit', submitForm);
+</script>
+
 </body>
 </html>
