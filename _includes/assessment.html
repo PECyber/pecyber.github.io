@@ -47,7 +47,7 @@
     </style>
 </head>
 <body>
-    <form id="readiness-assessment" action="https://formspree.io/f/mrbbklvl" method="POST">
+    <form id="readiness-assessment" action="https://formspree.io/f/mrbbklvl" method="POST" onsubmit="submitForm(event)">
         <div class="question">
             <p><strong>1. Do you enforce strong password policies for all employees?</strong></p>
             <label><input type="radio" name="q1" value="2"> Yes</label>
@@ -93,14 +93,14 @@
             <input type="email" name="email" required placeholder="Enter your email address">
         </div>
 
-        <button type="button" class="btn" onclick="submitForm()">Submit</button>
+        <button type="submit" class="btn">Submit</button>
     </form>
 
     <div id="results" class="results"></div>
 
-   <script>
+ <script>
     function submitForm(event) {
-        event.preventDefault(); // Prevent the default form submission
+        event.preventDefault(); // Prevent the form from submitting traditionally
 
         const form = document.getElementById('readiness-assessment');
         const formData = new FormData(form);
@@ -113,7 +113,7 @@
             }
         }
 
-        // Show score result to user
+        // Display results
         const resultsDiv = document.getElementById('results');
         resultsDiv.style.display = 'block';
         if (score >= 8) {
@@ -124,7 +124,7 @@
             resultsDiv.innerHTML = `<h2>Your organisation is at risk!</h2><p>You need immediate improvements to your cybersecurity posture. <a href='/contact/'>Contact us</a> today for a free assessment.</p>`;
         }
 
-        // Submit form to Formspree using Fetch API
+        // Submit form data using Fetch
         fetch(form.action, {
             method: form.method,
             body: formData,
@@ -136,7 +136,7 @@
                 console.log('Form successfully submitted!');
                 alert('Form submitted successfully. We will contact you soon.');
             } else {
-                console.log('There was an issue with the form submission');
+                console.log('There was an issue with the form submission.');
                 alert('Form submission failed. Please try again.');
             }
         }).catch(error => {
@@ -144,10 +144,6 @@
             alert('An error occurred. Please try again.');
         });
     }
-
-    // Attach the event listener to the form
-    document.getElementById('readiness-assessment').addEventListener('submit', submitForm);
 </script>
-
 </body>
 </html>
