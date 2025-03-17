@@ -109,6 +109,8 @@ analytics:
   google:
     tracking_id          : "G-QJB53GFC4S"
     anonymize_ip         : false
+  custom:
+    anonymize_ip         : false
 
 
 # Site Author
