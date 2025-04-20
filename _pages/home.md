@@ -6,7 +6,8 @@ permalink: /
 # Welcome to Protective Edge Cyber (PECyber)
 Your trusted partner in cybersecurity consulting, based in Australia.
 
-<img src="/assets/security_new.jpg" align="centre" alt="drawing" style="width:450px;" loading="lazy"/>
+![security_new](/assets/security_new.jpg "Security")
+
 
 ## Our Services 
 
