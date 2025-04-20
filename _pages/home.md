@@ -6,39 +6,50 @@ title: ProtectiveEdege Cyber (PECyber)
 ---
 
 Your trusted partner in cybersecurity consulting, based in Australia.
+--- 
+## What We Do
 
-![security_new](/assets/security_new.jpg "Security")
+We specialise in security consulting for organisations who value actionable outcomes and measurable improvement.
 
+### 🔐 Core Services
+- **Essential 8 Assessments**  
+  Tailored maturity assessments and gap analysis aligned to the Australian Signals Directorate’s (ASD) Essential 8 framework.
 
-## Our Services 
+- **Cyber Security Consulting**  
+  Expert advice and delivery across security uplift, governance, documentation, and risk assessments.
 
-*   E8 Assessments
-*   Cyber Security Consulting
-*   Purple Team Exercises
-*   Cloud Security Review 
-*   Virtual CISO (vCISO)
-*   Audit Preparation and Support
+- **Purple Team Exercises**  
+  Combined red/blue teaming engagements to test detection and response capabilities, including tabletop exercises.
 
-### E8 Assessment
+- **Cloud Security Reviews**  
+  Best-practice assessments of cloud architecture (e.g., Microsoft 365, Azure, AWS) for configuration and hardening.
 
-We provide comprehensive assessments based on the ASD Essential 8 framework to ensure your organisation's security posture is robust.
+- **Virtual CISO (vCISO)**  
+  Strategic security leadership as a service, including incident response support, board reporting, and roadmap delivery.
 
-### Cyber Security Consulting
+- **Audit Support**  
+  Pre-audit readiness support for IRAP, ISO27001, NIST CSF, and Essential 8 reviews.
 
-Our expert consulting services help you enhance your organisation's security posture with tailored solutions and advice.
+---
 
-### Purple Team Exercises
+## Why Choose PECyber?
 
-Engage in proactive and reactive exercises to strengthen your cybersecurity defences and improve your response to threats.
+✔️ **Australian-based** and focused — we understand the compliance, privacy, and operational needs unique to Australian business and government.  
+✔️ **Straight-talking, outcome-driven** advice — no fluff, just results.  
+✔️ **Experienced across enterprise and small/medium business**  
+✔️ **Fully independent and transparent** — your security comes first.
 
-### Cloud Security
+---
 
-We offer best practice cloud deployment, architecture review, and security hardening to secure your cloud infrastructure.
+## Useful Resources
 
-### Virtual CISO Service
+- [Essential 8 Readiness Quiz](/survey/)  
+  Take our 5-minute quiz to assess your maturity across the ASD Essential 8
 
-Our Virtual CISO service provides expert security leadership and advice, whether you need short-term or long-term support.
+- [Contact Us](/contact/)  
+  Reach out to discuss how we can support your cybersecurity goals.
 
-### Audit Preparation and Support
+- [Our Services Overview](/services/)  
+  A deeper dive into our capabilities and approach.
 
-We help you prepare for various audits, including IRAP, ISO27001, and NIST, ensuring your organisation meets all compliance requirements.
+![PECyber Security Illustration](/assets/security_new.jpg "Security")
