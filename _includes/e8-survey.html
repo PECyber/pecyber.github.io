@@ -3,19 +3,19 @@
     <div class="question">
       <b><label>Application Control</label></b>
       <label>Is a baseline of approved applications maintained and enforced?</label>
-      <select name="Baseline">
+      <select name="q1">
         <option value="0">No</option><option value="1">Partially</option><option value="2">Yes</option>
       </select>
       <label>Is application control updated in response to threat intelligence?</label>
-      <select name="Updated in Response to Threat Ingelligence?">
+      <select name="q2">
         <option value="0">No</option><option value="1">Occasionally</option><option value="2">Yes, proactively</option>
       </select>
       <label>Are unauthorised executables blocked?</label>
-      <select name="Are unauthorised executables blocked?">
+      <select name="q3">
         <option value="0">No</option><option value="1">Partially</option><option value="2">Yes</option>
       </select>
       <label>Is application control enforced on all workstations and servers?</label>
-      <select name="Enforced">
+      <select name="q4">
         <option value="0">No</option><option value="1">Some</option><option value="2">All</option>
       </select>
     </div>
@@ -23,15 +23,15 @@
     <div class="question">
       <b><label>Patch Applications</label></b>
       <label>Are vulnerability scans run regularly to identify unpatched applications?</label>
-      <select name="Vuln Scans">
+      <select name="q5">
         <option value="0">No</option><option value="1">Occasionally</option><option value="2">Yes, regularly</option>
       </select>
       <label>Are security patches for apps deployed within 48 hours?</label>
-      <select name="48hr Deployment">
+      <select name="q6">
         <option value="0">No</option><option value="1">Some patches delayed</option><option value="2">Always within timeframe</option>
       </select>
       <label>Are unsupported applications removed from all systems?</label>
-      <select name="Unsupported Applications">
+      <select name="q7">
         <option value="0">No</option><option value="1">Some removed</option><option value="2">All removed</option>
       </select>
     </div>
@@ -39,11 +39,11 @@
     <div class="question">
       <b><label>Microsoft Office Macros</label></b>
       <label>Are unsigned macros blocked?</label>
-      <select name="Unsigned Macros">
+      <select name="q8">
         <option value="0">No</option><option value="1">Some blocked</option><option value="2">All blocked</option>
       </select>
       <label>Are macros only allowed in trusted locations?</label>
-      <select name="Trusted Locations">
+      <select name="q9">
         <option value="0">No</option><option value="1">Some controls</option><option value="2">Fully enforced</option>
       </select>
     </div>
@@ -51,11 +51,11 @@
     <div class="question">
       <b><label>User Application Hardening</label></b>
       <label>Are Flash and Java content blocked in browsers?</label>
-      <select name="Applets">
+      <select name="q10">
         <option value="0">No</option><option value="1">Partially</option><option value="2">Fully implemented</option>
       </select>
       <label>Are ads and popups blocked through browser configuration or extensions?</label>
-      <select name="Ads">
+      <select name="q11">
         <option value="0">No</option><option value="1">Some implemented</option><option value="2">Yes, across environment</option>
       </select>
     </div>
@@ -63,19 +63,19 @@
     <div class="question">
       <b><label>Restrict Admin Privileges</label></b>
       <label>Are just-in-time admin access controls in use?</label>
-      <select name="JustInTimeAdmin">
+      <select name="q12">
         <option value="0">No</option><option value="1">Partially</option><option value="2">Yes</option>
       </select>
       <label>Is admin activity regularly reviewed and audited?</label>
-      <select name="AdmiN Reviews">
+      <select name="q13">
         <option value="0">No</option><option value="1">Occasionally</option><option value="2">Regularly</option>
       </select>
       <label>Are admin accounts separated from normal accounts?</label>
-      <select name="Account Separation">
+      <select name="q14">
         <option value="0">No</option><option value="1">Some separation</option><option value="2">Full separation enforced</option>
       </select>
       <label>Is use of admin privileges monitored and logged?</label>
-      <select name="Monitoring">
+      <select name="q15">
         <option value="0">No</option><option value="1">Some monitoring</option><option value="2">Fully monitored</option>
       </select>
     </div>
@@ -83,11 +83,11 @@
     <div class="question">
       <b><label>Patch Operating Systems</label></b>
       <label>Are critical OS patches applied within 48 hours?</label>
-      <select name="OS 48hr Patches">
+      <select name="q16">
         <option value="0">No</option><option value="1">Sometimes</option><option value="2">Always</option>
       </select>
       <label>Is automated patching in place for operating systems?</label>
-      <select name="Automation">
+      <select name="q17">
         <option value="0">No</option><option value="1">Partially</option><option value="2">Yes</option>
       </select>
     </div>
@@ -95,11 +95,11 @@
     <div class="question">
       <b><label>Multi-Factor Authentication</label></b>
       <label>Is MFA enforced for remote access?</label>
-      <select name="MFA Enforced Remote Access">
+      <select name="q18">
         <option value="0">No</option><option value="1">Some users</option><option value="2">All users</option>
       </select>
       <label>Is MFA enforced for all privileged accounts?</label>
-      <select name="MFA Enforced Admin">
+      <select name="q19">
         <option value="0">No</option><option value="1">Some</option><option value="2">All</option>
       </select>
     </div>
@@ -107,19 +107,19 @@
     <div class="question">
       <b><label>Regular Backups</label></b>
       <label>Are backups performed daily?</label>
-      <select name="Daily">
+      <select name="q20">
         <option value="0">No</option><option value="1">Weekly</option><option value="2">Daily</option>
       </select>
       <label>Are backups tested for integrity and restoration?</label>
-      <select name="Tested">
+      <select name="q21">
         <option value="0">No</option><option value="1">Occasionally</option><option value="2">Regularly tested</option>
       </select>
       <label>Are backups protected from unauthorised modification and deletion?</label>
-      <select name="Backups Protected">
+      <select name="q22">
         <option value="0">No</option><option value="1">Some controls in place</option><option value="2">Fully protected</option>
       </select>
       <label>Are backups replicated offsite or stored offline?</label>
-      <select name="Offsite">
+      <select name="q23">
         <option value="0">No</option><option value="1">Some data</option><option value="2">All critical data</option>
       </select>
     </div>
