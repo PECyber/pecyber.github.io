@@ -1,5 +1,5 @@
 <body>
-  <form id="quizForm">
+<form id="quizForm" method="POST" action="https://formspree.io/f/xvgaoang">
     <div class="question">
       <label>Application Control</label>
       <label>Is a baseline of approved applications maintained and enforced?</label>
@@ -124,54 +124,80 @@
       </select>
     </div>
 
-    <button type="button" onclick="calculateScore()">Submit</button>
-  </form>
+  <div class="question">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required style="width:100%; padding:8px;">
 
-  <div id="result" class="result" style="display:none;"></div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script>
-    function calculateScore() {
-      const form = document.getElementById('quizForm');
-      const formData = new FormData(form);
-      let score = 0;
-      for (let [key, value] of formData.entries()) {
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required style="width:100%; padding:8px;">
+  </div>
+
+   <input type="hidden" name="score" id="scoreField">
+  <input type="hidden" name="summary" id="summaryField">
+
+  <button type="button" onclick="calculateScore()">Submit</button>
+</form>
+
+<div id="result" class="result" style="display:none;"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+  function calculateScore() {
+    const form = document.getElementById('quizForm');
+    const formData = new FormData(form);
+    const name = formData.get("name") || "Unknown";
+    const email = formData.get("email") || "Unknown";
+    let score = 0;
+    for (let [key, value] of formData.entries()) {
+      if (key.startsWith("q")) {
         score += parseInt(value);
       }
-
-      const resultDiv = document.getElementById('result');
-      resultDiv.style.display = 'block';
-      resultDiv.innerHTML = `<h2>Your Cyber Readiness Score: ${score}/46</h2>`;
-
-      if (score >= 38) {
-        resultDiv.innerHTML += '<p>Excellent! Your organisation shows a strong cyber maturity. To maintain and enhance this posture, contact <strong>PECyber</strong> for tailored continuous improvement strategies.</p>';
-      } else if (score >= 28) {
-        resultDiv.innerHTML += '<p>You are progressing well. There is room to strengthen controls further. <strong>PECyber</strong> can assist with a detailed Essential 8 assessment.</p>';
-      } else {
-        resultDiv.innerHTML += '<p>Your cyber maturity may be low. We strongly recommend a comprehensive review. <strong>PECyber</strong> can help guide you through an uplift journey.</p>';
-      }
-
-      const button = document.createElement('button');
-      button.textContent = 'Download PDF Report';
-      button.onclick = () => generatePDF(score);
-      resultDiv.appendChild(button);
     }
 
-    function generatePDF(score) {
-      const { jsPDF } = window.jspdf;
-      const doc = new jsPDF();
-      doc.setFontSize(16);
-      doc.text("PECyber - Essential 8 Self Assessment", 20, 20);
-      doc.setFontSize(12);
-      doc.text(`Score: ${score}/46`, 20, 30);
-      doc.text("Assessment Summary:", 20, 40);
-      if (score >= 38) {
-        doc.text("Strong cyber maturity. Contact PECyber for ongoing improvement.", 20, 50);
-      } else if (score >= 28) {
-        doc.text("Moderate maturity. PECyber can help with deeper assessments.", 20, 50);
-      } else {
-        doc.text("Low maturity. PECyber recommends a full Essential 8 uplift.", 20, 50);
-      }
-      doc.save("PECyber_E8_Assessment.pdf");
+    let summary = '';
+    if (score >= 38) {
+      summary = "Excellent! Your organisation shows a strong cyber maturity. Contact PECyber for tailored continuous improvement strategies.";
+    } else if (score >= 28) {
+      summary = "You're on the right track. PECyber can assist with a detailed Essential 8 assessment.";
+    } else {
+      summary = "Your cyber maturity may be low. PECyber recommends a comprehensive review and uplift journey.";
     }
-  </script>
+
+    document.getElementById('scoreField').value = `${score}/46`;
+    document.getElementById('summaryField').value = summary;
+
+    const resultDiv = document.getElementById('result');
+    resultDiv.style.display = 'block';
+    resultDiv.innerHTML = `<h2>Your Cyber Readiness Score: ${score}/46</h2><p>${summary}</p>`;
+
+    const button = document.createElement('button');
+    button.textContent = 'Download PDF Report';
+    button.onclick = () => generatePDF(score);
+    resultDiv.appendChild(button);
+
+    // Submit the form and redirect to home after a short delay
+    setTimeout(() => {
+      form.submit();
+      window.location.href = "/";
+    }, 1000);
+  }
+
+  function generatePDF(score) {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    doc.setFontSize(16);
+    doc.text("PECyber - Essential 8 Self Assessment", 20, 20);
+    doc.setFontSize(12);
+    doc.text(`Score: ${score}/46`, 20, 30);
+    doc.text("Assessment Summary:", 20, 40);
+    if (score >= 38) {
+      doc.text("Strong cyber maturity. Contact PECyber for ongoing improvement.", 20, 50);
+    } else if (score >= 28) {
+      doc.text("Moderate maturity. PECyber can help with deeper assessments.", 20, 50);
+    } else {
+      doc.text("Low maturity. PECyber recommends a full Essential 8 uplift.", 20, 50);
+    }
+    doc.save("PECyber_E8_Assessment.pdf");
+  }
+</script>
 </body>
