@@ -131,14 +131,16 @@
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" required style="width:100%; padding:8px;">
   </div>
-
-   <input type="hidden" name="score" id="scoreField">
+  <input type="hidden" name="score" id="scoreField">
   <input type="hidden" name="summary" id="summaryField">
 
   <button type="button" onclick="calculateScore()">Submit</button>
 </form>
 
 <div id="result" class="result" style="display:none;"></div>
+<div id="confirmationMessage" class="result" style="display:none; background:#dff0d8; color:#3c763d; margin-top: 20px; padding: 10px; border: 1px solid #d6e9c6;">
+  <strong>Thank you!</strong> Your submission has been received.
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
@@ -175,11 +177,24 @@
     button.onclick = () => generatePDF(score);
     resultDiv.appendChild(button);
 
-    // Submit the form and redirect to home after a short delay
-    setTimeout(() => {
-      form.submit();
-      window.location.href = "/";
-    }, 1000);
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+    });
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        document.getElementById('confirmationMessage').style.display = 'block';
+        form.reset();
+      } else {
+        alert('There was a problem submitting your form.');
+      }
+    });
   }
 
   function generatePDF(score) {
