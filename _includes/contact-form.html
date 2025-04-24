@@ -1,4 +1,53 @@
 <form id="contact-form" action="https://formspree.io/f/xpzvvajb" method="POST">
+<style>
+  /* General spacing for form elements */
+  label,
+  input,
+  select,
+  textarea,
+  button {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-family: inherit;
+  }
+
+  /* Input, select and textarea styling */
+  input,
+  select,
+  textarea {
+    background-color: #2a2a2a; /* dark theme background */
+    color: #fff; /* white text for dark background */
+    border: 1px solid #666;
+    padding: 0.6rem;
+    border-radius: 6px;
+    box-sizing: border-box;
+  }
+
+  /* Placeholder styling and disabled items */
+  select option:disabled,
+  input::placeholder,
+  textarea::placeholder {
+    color: #aaa;
+  }
+
+  /* Button styling */
+  button {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  button:hover {
+    background-color: #666;
+  }
+</style>
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required><br><br>
                     <label for="email">Email:</label>
