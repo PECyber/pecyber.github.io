@@ -43,7 +43,7 @@ We specialise in security consulting for organisations who value actionable outc
 
 ## Useful Resources
 
-- [Essential 8 Readiness Quiz](/e8/)  
+- [Essential 8 Readiness Quiz](/survey/)  
   Take our 5-minute quiz to assess your maturity across the ASD Essential 8
 
 - [Contact Us](/contact/)  
