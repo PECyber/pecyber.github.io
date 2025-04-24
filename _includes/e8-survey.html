@@ -1,10 +1,24 @@
 <body>
 <form id="quizForm" method="POST" action="https://formspree.io/f/xvgaoang">
-    <style>
-    .question {
-      margin-bottom: 2rem;
-    }
-  </style>
+<style>
+  .question {
+    margin-bottom: 2rem;
+  }
+
+  select,
+  select option {
+    color: #000; /* Change to #fff if using a dark background */
+    background-color: #fff; /* Change to #2a2a2a for dark themes */
+    border: 1px solid #ccc;
+    padding: 0.4em;
+    font-size: 1em;
+  }
+
+  select:disabled,
+  select option:disabled {
+    color: #aaa;
+  }
+</style>
   <div class="question">
     <b><label>Application Control</label></b>
     <label>Is a baseline of approved applications maintained and enforced?</label>
