@@ -1,4 +1,4 @@
-/* === Layout Wrapper for Page Content === */
+/* === Main Layout Fixes === */
 .page-content-wrapper {
   display: flex;
   align-items: stretch;
@@ -6,35 +6,39 @@
   gap: 20px;
 }
 
-
-/* === Left Sidebar (Built-in Minimal Mistakes) === */
-.sidebar.sticky {
-  width: 240px;
-  height: 100vh;
-  display: flex;
-  padding: 0;
-  margin: 0;
+/* === LEFT SIDEBAR (default Minimal Mistakes) === */
+.sidebar {
+  width: 240px !important;
   flex-shrink: 0;
-  overflow: hidden;
-  align-items: stretch;
+  height: 100vh;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: stretch !important;
   justify-content: center;
+  overflow: hidden;
+}
+
+.sidebar .sidebar__inner {
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .sidebar.sticky img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
   display: block;
+  border-radius: 0 !important;
 }
 
-
-/* === Right Sidebar (Custom) === */
+/* === RIGHT SIDEBAR (custom) === */
 .sidebar__right {
   width: 240px;
-  height: 100vh;
   flex-shrink: 0;
-  position: relative;
+  height: 100vh;
   overflow: hidden;
+  position: relative;
 }
 
 .sidebar__right img {
@@ -42,36 +46,21 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: 0;
 }
 
-
-/* === Mobile View: Hide both side banners === */
+/* === Mobile Responsiveness === */
 @media screen and (max-width: 768px) {
-  .sidebar.sticky,
+  .sidebar,
   .sidebar__right {
-    display: none;
+    display: none !important;
   }
 }
 
-
-/* === Optional Debug Styling === */
-.sidebar.sticky {
-  border: 2px dashed red;
-}
-
-.sidebar__right {
-  border: 2px dashed blue;
-}
-
-.page-content-wrapper {
-  border: 2px dashed green;
-}
-
+/* === Debug (optional) === */
+.sidebar.sticky,
+.sidebar__right,
+.page-content-wrapper,
 .initial-content {
-  border: 2px dashed orange;
-}
-
-.sidebar__right img,
-.sidebar.sticky img {
-  border: 2px solid yellow;
+  border: 1px dashed yellow;
 }
