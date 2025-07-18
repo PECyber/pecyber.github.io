@@ -9,43 +9,49 @@
     {% include head/custom.html %}
   </head>
 
- <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
-  {% include_cached skip-links.html %}
-  {% include_cached masthead.html %}
+  <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
+    
+    {% include_cached skip-links.html %}
+    {% include_cached masthead.html %}
 
-  <main id="main" role="main" class="page__main">
-<div class="layout__wrapper">
-  <div class="page-content-wrapper">
-    <div class="sidebar sticky"> <!-- Default left side, already exists -->
-      <img src="/assets/images/your-left-image.png" alt="Left lock">
+    <!-- Main wrapper with side banners -->
+    <div class="page-content-wrapper">
+      
+      <!-- LEFT sticky banner -->
+      <aside class="sidebar">
+        <img src="/assets/images/leftlock.png" alt="Left lock" />
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main id="main" role="main" class="initial-content">
+        <div class="layout__wrapper">
+          {{ content }}
+          {% include after-content.html %}
+        </div>
+      </main>
+
+      <!-- RIGHT sticky banner -->
+      <aside class="sidebar__right">
+        <img src="/assets/images/rightlock.png" alt="Right lock" />
+      </aside>
+
     </div>
 
-    <div class="initial-content">
-      {{ content }}
-      {% include after-content.html %}
+    {% if site.search == true %}
+      <div class="search-content">
+        {% include_cached search/search_form.html %}
+      </div>
+    {% endif %}
+
+    <div id="footer" class="page__footer">
+      <footer>
+        {% include footer/custom.html %}
+        {% include_cached footer.html %}
+      </footer>
     </div>
 
-    {% include sidebar-right-custom.html %}
-  </div>
-</div>
-  </main>
-
-  {% if site.search == true %}
-    <div class="search-content">
-      {% include_cached search/search_form.html %}
-    </div>
-  {% endif %}
-
-  <div id="footer" class="page__footer">
-    <footer>
-      {% include footer/custom.html %}
-      {% include_cached footer.html %}
-    </footer>
-  </div>
-
-  {% include scripts.html %}
-  <!-- HubSpot -->
-  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/47728338.js"></script>
-</body>
-
+    {% include scripts.html %}
+    <!-- HubSpot -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/47728338.js"></script>
+  </body>
 </html>
