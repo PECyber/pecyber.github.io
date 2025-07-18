@@ -55,3 +55,25 @@
     display: none;
   }
 }
+
+/* DEBUG: Add borders to inspect layout */
+.sidebar.sticky {
+  border: 2px dashed red;
+}
+
+.sidebar__right {
+  border: 2px dashed blue;
+}
+
+.page-content-wrapper {
+  border: 2px dashed green;
+}
+
+.initial-content {
+  border: 2px dashed orange;
+}
+
+.sidebar__right img,
+.sidebar.sticky img {
+  border: 2px solid yellow;
+}
