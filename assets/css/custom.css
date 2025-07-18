@@ -1,9 +1,14 @@
-/* Stretch the sidebar image to fill the height */
+.sidebar.sticky {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .sidebar img {
-  height: 100%;
-  width: auto;
-  max-height: 80vh;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
+  height: 100% !important;
+  width: auto !important;
+  max-height: 80vh !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: 0 auto !important;
 }
