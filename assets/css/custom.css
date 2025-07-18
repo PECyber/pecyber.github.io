@@ -5,8 +5,9 @@
   align-items: stretch;
   max-width: 1200px;       /* Optional: limit content width */
   margin: 0 auto;
-  padding: 0 10px;         /* Optional horizontal padding */
-  gap: 30px;               /* Even spacing between columns */
+  padding: 0 10px;
+  gap: 30px;
+  border: 2px dashed green; /* DEBUG: wrapper border */
 }
 
 /* === Shared Sidebar Styles === */
@@ -20,6 +21,7 @@
   overflow: hidden;
   display: flex;
   align-items: stretch;
+  border: 2px dashed red; /* DEBUG: sidebar border */
 }
 
 /* === Sidebar Images === */
@@ -29,12 +31,14 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  border: 2px solid yellow; /* DEBUG: image border */
 }
 
 /* === Main Content === */
 .initial-content {
   flex: 1;
   min-width: 0;
+  border: 2px dashed orange; /* DEBUG: content area */
 }
 
 /* === Responsive Handling === */
