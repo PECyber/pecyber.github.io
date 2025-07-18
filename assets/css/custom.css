@@ -1,0 +1,9 @@
+/* Stretch the sidebar image to fill the height */
+.sidebar img {
+  height: 100%;
+  width: auto;
+  max-height: 80vh;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
