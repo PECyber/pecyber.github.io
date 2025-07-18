@@ -23,11 +23,23 @@
   }
 }
 
-/* Sidebar floats to the right */
+.page-content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+/* Optional: Make sure main content can shrink and flow properly */
+.initial-content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Sidebar styling */
 .sidebar__right {
   width: 180px;
   flex-shrink: 0;
-  margin-left: 20px;
   position: sticky;
   top: 20px;
 }
@@ -39,7 +51,7 @@
   border-radius: 8px;
 }
 
-/* Hide sidebar on mobile */
+/* Hide on small screens */
 @media screen and (max-width: 768px) {
   .sidebar__right {
     display: none;
