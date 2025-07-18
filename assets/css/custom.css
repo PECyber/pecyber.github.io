@@ -35,18 +35,22 @@
 /* Sidebar styling */
 .sidebar__right {
   width: 180px;
+  position: relative;
   flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  height: 100%;       /* 🔄 Try replacing with auto or 100% */
+  height: 100%;
+  overflow: hidden;
 }
 
 .sidebar__right img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100%;       /* 🔄 This is key */
-  object-fit: cover;  /* 🔄 Maintain aspect and fill container */
+  height: 100vh;  /* Full viewport height */
+  object-fit: cover;
   border-radius: 0;
 }
+
 .page-content-wrapper,
 .initial-content,
 .sidebar__right {
