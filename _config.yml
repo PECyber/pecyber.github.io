@@ -331,5 +331,5 @@ defaults:
       related: false
       permalink: /:title/
       sidebar:
-        - image: /assets/sidebar-banner.png
+        - image: /assets/sidebar.png
           image_alt: "PECyber Sidebar Banner"
