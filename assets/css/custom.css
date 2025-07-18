@@ -1,55 +1,74 @@
-/* === Layout Wrapper === */
+/* === Top-Level Layout === */
 .page-content-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  max-width: 1200px;       /* Optional: limit content width */
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 800px) 1fr; /* Sidebar - Content - Sidebar */
+  gap: 0;
   margin: 0 auto;
-  padding: 0 10px;
-  gap: 30px;
-  border: 2px dashed green; /* DEBUG: wrapper border */
+  padding: 0;
+  width: 100%;
+  border: 2px dashed green; /* DEBUG */
 }
 
-/* === Shared Sidebar Styles === */
-.sidebar,
-.sidebar__right {
-  width: 200px;
+/* === Left Sidebar === */
+.sidebar {
   height: 100vh;
   position: sticky;
   top: 0;
-  flex-shrink: 0;
-  overflow: hidden;
   display: flex;
+  justify-content: center;
   align-items: stretch;
-  border: 2px dashed red; /* DEBUG: sidebar border */
+  overflow: hidden;
+  border: 2px dashed red; /* DEBUG */
 }
 
-/* === Sidebar Images === */
-.sidebar img,
-.sidebar__right img {
-  width: 100%;
+.sidebar img {
   height: 100%;
+  width: 100%;
   object-fit: cover;
   display: block;
-  border: 2px solid yellow; /* DEBUG: image border */
+  border: 2px solid yellow; /* DEBUG */
 }
 
 /* === Main Content === */
 .initial-content {
-  flex: 1;
-  min-width: 0;
-  border: 2px dashed orange; /* DEBUG: content area */
+  padding: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px dashed orange; /* DEBUG */
 }
 
-/* === Responsive Handling === */
-@media screen and (max-width: 1024px) {
+/* === Right Sidebar === */
+.sidebar__right {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  overflow: hidden;
+  border: 2px dashed red; /* DEBUG */
+}
+
+.sidebar__right img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  border: 2px solid yellow; /* DEBUG */
+}
+
+/* === Responsive Collapse for Mobile === */
+@media (max-width: 1024px) {
+  .page-content-wrapper {
+    grid-template-columns: 1fr;
+  }
+
   .sidebar,
   .sidebar__right {
     display: none;
   }
 
-  .page-content-wrapper {
-    padding: 0 20px;
-    gap: 0;
+  .initial-content {
+    padding: 1rem;
   }
 }
