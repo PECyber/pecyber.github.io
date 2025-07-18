@@ -40,18 +40,30 @@
 .sidebar__right {
   width: 180px;
   flex-shrink: 0;
-  position: sticky;
-  top: 20px;
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  margin-top: 0;
 }
 
 .sidebar__right img {
   width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 8px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
 }
 
-/* Hide on small screens */
+/* Match the left side look */
+.page-content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 20px;
+  min-height: 100%;
+}
+
+/* Hide sidebar on mobile */
 @media screen and (max-width: 768px) {
   .sidebar__right {
     display: none;
