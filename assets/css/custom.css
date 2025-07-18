@@ -16,3 +16,30 @@
   margin: 0 !important;
   padding: 0 !important;
 }
+
+@media screen and (max-width: 768px) {
+  .sidebar img {
+    display: none !important;
+  }
+}
+
+.sidebar__right {
+  position: fixed;
+  top: 100px;
+  right: 10px;
+  width: 120px;
+  z-index: 1000;
+}
+
+.sidebar__right img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar__right {
+    display: none;
+  }
+}
