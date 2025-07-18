@@ -1,18 +1,21 @@
 /* ====== Side Banners ====== */
 .side-banner {
   position: fixed;
-  top: 100px; /* adjust if needed for spacing below the nav */
+  top: 0;
   bottom: 0;
   width: 100px;
   z-index: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1rem 0;
 }
 
 .side-banner img {
-  max-height: 90vh;
+  max-height: 95vh;   /* taller, but not full screen */
+  max-width: 100px;   /* controls how wide the image gets */
   width: auto;
+  height: auto;
   object-fit: contain;
   opacity: 0.85;
 }
