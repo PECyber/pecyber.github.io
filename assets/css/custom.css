@@ -25,19 +25,22 @@
 
 .sidebar__right {
   position: fixed;
-  top: 100px;
+  top: 120px;
   right: 10px;
   width: 120px;
   z-index: 1000;
+  background: transparent;
 }
 
 .sidebar__right img {
   width: 100%;
   height: auto;
+  display: block;
   border-radius: 6px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
+/* Hide on mobile */
 @media screen and (max-width: 768px) {
   .sidebar__right {
     display: none;
