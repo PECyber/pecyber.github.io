@@ -14,13 +14,20 @@
   {% include_cached masthead.html %}
 
   <main id="main" role="main" class="page__main">
-    <div class="page-content-wrapper">
-      <div class="initial-content">
-        {{ content }}
-        {% include after-content.html %}
-      </div>
-      {% include sidebar-right-custom.html %}
+<div class="layout__wrapper">
+  <div class="page-content-wrapper">
+    <div class="sidebar sticky"> <!-- Default left side, already exists -->
+      <img src="/assets/images/your-left-image.png" alt="Left lock">
     </div>
+
+    <div class="initial-content">
+      {{ content }}
+      {% include after-content.html %}
+    </div>
+
+    {% include sidebar-right-custom.html %}
+  </div>
+</div>
   </main>
 
   {% if site.search == true %}
