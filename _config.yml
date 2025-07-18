@@ -330,6 +330,3 @@ defaults:
       share: false
       related: false
       permalink: /:title/
-      sidebar:
-        - image: /assets/banner-tall.png
-          image_alt: "PECyber Sidebar Banner"
