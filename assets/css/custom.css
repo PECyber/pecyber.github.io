@@ -1,17 +1,24 @@
-/* === MAIN WRAPPER === */
-.page-content-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
+/* ===== Reset margins/padding and set base styles ===== */
+body {
+  margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  background-color: #1e222c;
+  color: #fff;
 }
 
-/* === SIDE BANNERS === */
-.sidebar, .sidebar__right {
+/* ===== Layout Wrappers ===== */
+.page-content-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+}
+
+/* ===== Sidebars (left and right) ===== */
+.sidebar,
+.sidebar__right {
   width: 120px;
   flex-shrink: 0;
   position: sticky;
@@ -20,39 +27,66 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: none;
   padding: 0;
+  z-index: 1;
 }
 
+/* Optional: adjust if banners are not flush with top of masthead */
+.sidebar,
+.sidebar__right {
+  margin-top: -1rem;
+}
+
+/* ===== Images in sidebars ===== */
 .sidebar img,
 .sidebar__right img {
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain;
+  height: 100vh;
+  width: auto;
+  object-fit: cover;
   display: block;
 }
 
-/* === MAIN CONTENT === */
-.initial-content {
+/* ===== Main Content ===== */
+.page__main {
   flex: 1;
-  max-width: 960px;
+  max-width: 1000px;
   padding: 2rem;
   box-sizing: border-box;
 }
 
-/* === RESPONSIVE === */
-@media (max-width: 1024px) {
-  .page-content-wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .sidebar, .sidebar__right {
+/* Slight reduction in dead space on narrow viewports */
+@media screen and (max-width: 1200px) {
+  .sidebar,
+  .sidebar__right {
     display: none;
   }
 
-  .initial-content {
-    padding: 1rem;
-    max-width: 100%;
+  .page__main {
+    padding: 1.5rem;
   }
+}
+
+/* ===== Footer ===== */
+.page__footer {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #151820;
+  text-align: center;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+/* ===== Headings and content spacing ===== */
+h1, h2, h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+p, ul, ol {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.initial-content {
+  padding: 0 1rem;
 }
