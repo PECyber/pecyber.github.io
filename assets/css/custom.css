@@ -1,0 +1,45 @@
+/* ====== Side Banners ====== */
+.side-banner {
+  position: fixed;
+  top: 100px; /* adjust if needed for spacing below the nav */
+  bottom: 0;
+  width: 100px;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.side-banner img {
+  max-height: 90vh;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.85;
+}
+
+/* Left banner */
+.side-banner.left {
+  left: 20px;
+}
+
+/* Right banner */
+.side-banner.right {
+  right: 20px;
+}
+
+/* Ensure main content doesn't overlap */
+.page__main {
+  margin-left: 140px;
+  margin-right: 140px;
+}
+
+/* Optional: Hide banners on very small screens */
+@media (max-width: 900px) {
+  .side-banner {
+    display: none;
+  }
+
+  .page__main {
+    margin: 0 1rem;
+  }
+}
