@@ -1,14 +1,16 @@
+/* Force sidebar to fill most of viewport height */
 .sidebar.sticky {
+  height: 80vh;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 
+/* Stretch the image inside it */
 .sidebar img {
-  height: 100% !important;
-  width: auto !important;
-  max-height: 80vh !important;
-  object-fit: contain !important;
-  display: block !important;
-  margin: 0 auto !important;
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
 }
