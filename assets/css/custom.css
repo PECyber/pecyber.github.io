@@ -1,48 +1,39 @@
-/* ====== Side Banners ====== */
+/* Position banners */
 .side-banner {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  width: 100px;
-  z-index: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem 0;
+  position: fixed !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  width: 140px !important;
+  z-index: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
-.side-banner img {
-  max-height: 95vh;   /* taller, but not full screen */
-  max-width: 100px;   /* controls how wide the image gets */
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  opacity: 0.85;
-}
-
-/* Left banner */
 .side-banner.left {
-  left: 20px;
+  left: 0 !important;
 }
 
-/* Right banner */
 .side-banner.right {
-  right: 20px;
+  right: 0 !important;
 }
 
-/* Ensure main content doesn't overlap */
-.page__main {
-  margin-left: 140px;
-  margin-right: 140px;
+/* Image inside banners */
+.side-banner img {
+  max-height: 95vh !important;
+  max-width: 100% !important;
+  height: auto !important;
+  width: auto !important;
+  object-fit: contain !important;
+  display: block !important;
+  opacity: 0.9 !important;
 }
 
-/* Optional: Hide banners on very small screens */
-@media (max-width: 900px) {
+/* Optional: hide on mobile */
+@media screen and (max-width: 768px) {
   .side-banner {
-    display: none;
-  }
-
-  .page__main {
-    margin: 0 1rem;
+    display: none !important;
   }
 }
