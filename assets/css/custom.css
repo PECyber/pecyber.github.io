@@ -1,13 +1,22 @@
-.sidebar {
-  height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.sidebar.sticky {
+  height: 100vh !important;         /* Fill full viewport height */
+  display: flex !important;         /* Enable flexbox */
+  align-items: stretch !important;  /* Let children expand */
+  justify-content: center;          /* Center horizontally */
+  padding: 0 !important;            /* Remove top/bottom spacing */
+  margin: 0 !important;
 }
 
-.sidebar img {
-  max-height: 100%;
-  width: auto;
-  object-fit: contain;
+.sidebar.sticky img {
+  flex-grow: 1 !important;
+  height: 100% !important;          /* Stretch to match sidebar height */
+  width: 100% !important;
+  object-fit: cover !important;     /* Fill without distortion (or use contain) */
   display: block;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.sidebar.sticky img {
+  border: 2px solid red;
 }
