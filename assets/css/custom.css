@@ -1,32 +1,28 @@
-/* === Layout Container === */
+/* === Layout Wrapper === */
 .page-content-wrapper {
   display: flex;
+  justify-content: center;
   align-items: stretch;
-  justify-content: space-between;
+  max-width: 1200px;       /* Optional: limit content width */
+  margin: 0 auto;
+  padding: 0 10px;         /* Optional horizontal padding */
+  gap: 30px;               /* Even spacing between columns */
 }
 
-/* === Main Content (middle section) === */
-.initial-content {
-  flex-grow: 1;
-  min-width: 0;
-  padding: 0 20px; /* optional spacing */
-}
-
-/* === Shared Banner Styles (Left + Right) === */
+/* === Shared Sidebar Styles === */
 .sidebar,
 .sidebar__right {
+  width: 200px;
+  height: 100vh;
   position: sticky;
   top: 0;
-  height: 100vh;
-  width: 200px;
   flex-shrink: 0;
   overflow: hidden;
   display: flex;
   align-items: stretch;
-  z-index: 0; /* stays behind header */
 }
 
-/* === Banner Images === */
+/* === Sidebar Images === */
 .sidebar img,
 .sidebar__right img {
   width: 100%;
@@ -35,27 +31,21 @@
   display: block;
 }
 
-/* === Responsive Design: Hide on Small Screens === */
-@media screen and (max-width: 768px) {
+/* === Main Content === */
+.initial-content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* === Responsive Handling === */
+@media screen and (max-width: 1024px) {
   .sidebar,
   .sidebar__right {
     display: none;
   }
-}
 
-/* === Optional: Debug Borders === */
-.page-content-wrapper {
-  /* border: 1px dashed green; */
-}
-
-.sidebar {
-  /* border: 1px dashed red; */
-}
-
-.sidebar__right {
-  /* border: 1px dashed blue; */
-}
-
-.initial-content {
-  /* border: 1px dashed orange; */
+  .page-content-wrapper {
+    padding: 0 20px;
+    gap: 0;
+  }
 }
