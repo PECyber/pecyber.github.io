@@ -2,47 +2,52 @@
 .side-banner {
   position: fixed !important;
   top: 0;
-  height: 100vh;
-  width: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-  background-color: transparent;
+  height: 100vh !important;
+  width: 120px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 10 !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 /* Position left and right banners */
 .side-banner.left {
-  left: 0;
+  left: 0 !important;
 }
 
 .side-banner.right {
-  right: 0;
+  right: 0 !important;
 }
 
 /* ==== Side Banner Images ==== */
 .side-banner img {
-  max-height: 95vh;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  display: block;
+  height: 100vh !important;
+  width: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  border: none !important;
 }
 
 /* ==== Main content wrapper with spacing ==== */
 .page-content-wrapper {
-  margin-left: 140px; /* width of sidebar + spacing */
-  margin-right: 140px;
+  margin-left: 140px !important;  /* Adjust depending on sidebar width */
+  margin-right: 140px !important;
 }
 
-/* Keep it responsive: hide banners on mobile */
+/* Responsive: Hide side banners on small screens */
 @media screen and (max-width: 768px) {
   .side-banner {
     display: none !important;
   }
 
   .page-content-wrapper {
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 }
