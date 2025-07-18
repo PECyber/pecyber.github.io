@@ -34,7 +34,7 @@
 
 /* Sidebar styling */
 .sidebar__right {
-  width: 180px;
+  width: 240px;         /* Match left sidebar */
   flex-shrink: 0;
   position: relative;
   height: 100vh;
