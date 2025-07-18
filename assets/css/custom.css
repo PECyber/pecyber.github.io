@@ -23,24 +23,23 @@
   }
 }
 
+/* Sidebar floats to the right */
 .sidebar__right {
-  position: fixed;
-  top: 120px;
-  right: 10px;
-  width: 120px;
-  z-index: 1000;
-  background: transparent;
+  width: 180px;
+  flex-shrink: 0;
+  margin-left: 20px;
+  position: sticky;
+  top: 20px;
 }
 
 .sidebar__right img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 6px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border-radius: 8px;
 }
 
-/* Hide on mobile */
+/* Hide sidebar on mobile */
 @media screen and (max-width: 768px) {
   .sidebar__right {
     display: none;
