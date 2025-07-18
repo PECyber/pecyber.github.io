@@ -23,46 +23,35 @@
   }
 }
 
+
+/* RHS */
 .page-content-wrapper {
   display: flex;
+  align-items: stretch; /* 👈 Ensures children match height */
   justify-content: space-between;
-  align-items: flex-start;
   gap: 20px;
-}
-
-/* Optional: Make sure main content can shrink and flow properly */
-.initial-content {
-  flex: 1;
-  min-width: 0;
 }
 
 /* Sidebar styling */
 .sidebar__right {
   width: 180px;
   flex-shrink: 0;
-  position: relative;
-  height: 100%;
   display: flex;
-  align-items: flex-start;
-  margin-top: 0;
+  flex-direction: column;
+  height: 100%;       /* 🔄 Try replacing with auto or 100% */
 }
 
 .sidebar__right img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: 100%;       /* 🔄 This is key */
+  object-fit: cover;  /* 🔄 Maintain aspect and fill container */
   border-radius: 0;
 }
-
-/* Match the left side look */
-.page-content-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  gap: 20px;
-  min-height: 100%;
+.page-content-wrapper,
+.initial-content,
+.sidebar__right {
+  border: 1px dashed red;
 }
-
 /* Hide sidebar on mobile */
 @media screen and (max-width: 768px) {
   .sidebar__right {
