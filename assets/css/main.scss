@@ -1,9 +1,48 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
-search: false
+# Only the main Sass file needs front matter
 ---
 
 @charset "utf-8";
 
-@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
-@import "minimal-mistakes"; // main partials
+// Load theme skin and core
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+@import "minimal-mistakes";
+
+/* ==== PECyber custom tweaks ==== */
+
+/* Restrict text width for readability */
+.page__content {
+  max-width: 72ch;    /* ~72 characters per line */
+  line-height: 1.6;   /* more vertical spacing */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;    /* gutter so text doesn’t touch edges */
+}
+
+/* Widen certain pages if you add 'classes: wide' in front matter */
+.wide .page__content {
+  max-width: none;
+}
+
+/* Slightly bigger base font on larger screens */
+@media (min-width: 768px) {
+  html { font-size: 18px; }
+}
+@media (min-width: 1200px) {
+  html { font-size: 19px; }
+}
+
+/* Better wrapping on phones */
+.page__content p {
+  hyphens: auto;
+  overflow-wrap: anywhere;
+}
+
+/* Optional: split long text into columns on desktop */
+.text-columns {
+  column-count: 2;
+  column-gap: 2rem;
+}
+@media (max-width: 900px) {
+  .text-columns { column-count: 1; }
+}
