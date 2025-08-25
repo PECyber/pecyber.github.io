@@ -1,5 +1,5 @@
 ---
-description: "ProtectiveEdge Cyber is an Australian-based cybersecurity consulting firm offering comprehensive services to state and local governments, and SMEs."
+description: "ProtectiveEdge Cyber is an Australian cybersecurity consultancy delivering Essential 8, vCISO, cloud security, audit support, and incident response services for SMEs and government."
 keywords: "Cybersecurity, Cyber Security Consulting, Australian Cybersecurity, E8 Assessment, Essential 8 Maturity, ASD Essential Eight, Purple Team Exercises, Red Team Testing, Blue Team Analysis, Cloud Security, Microsoft 365 Security, Azure Hardening, AWS Security Review, Virtual CISO, vCISO Australia, Audit Preparation, IRAP Compliance, ISO27001 Support, NIST Cybersecurity Framework, Security Hardening, Cybersecurity Posture, Cybersecurity Leadership, Proactive Cybersecurity, Reactive Cybersecurity, Cyber Risk Management, Tabletop Exercises, Incident Response Planning, Cybersecurity Services, Consulting Services Australia, Canberra Cybersecurity, Government Cybersecurity, Cyber Strategy for SMBs, Australian Business Cybersecurity"
 permalink: /
 title: ProtectiveEdege Cyber (PECyber)
