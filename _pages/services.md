@@ -5,6 +5,7 @@ keywords: "cybersecurity, Australian cybersecurity, cyber consulting, state gove
 permalink: /services/
 sidebar:
   nav: "services"
+classes: wide
 ---
 # Our Services
 
