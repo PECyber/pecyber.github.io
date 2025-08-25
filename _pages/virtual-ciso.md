@@ -2,9 +2,10 @@
 title: Virtual CISO (vCISO) Services
 permalink: /virtual-ciso/
 description: "Our Virtual CISO services are offered for short-term or long-term engagements, providing expert security advice, direction and strategy."
-keywords: "Virtual CISO, security advice, security strategy, Incident CISO, cybersecurity incident management, ProtectiveEdge Cyber"
+keywords: "vciso, Virtual Chief Information Security Officer, vCISO services Australia, Outsourced CISO, CISO as a Service, Fractional CISO, Interim CISO, Cybersecurity leadership, Information security strategy, Security risk management, Cybersecurity governance, Security program management, Cyber resilience planning, Compliance consulting Essential 8, Compliance consulting ISO 27001, Compliance consulting NIST CSF, Security maturity assessment, Incident response leadership, Cyber incident commander, Incident management support, Data breach response, Emergency CISO, Crisis management cybersecurity, Incident recovery planning, Business continuity, Disaster recovery, Cybersecurity monitoring, 24/7 threat monitoring, Continuous security oversight, Security operations oversight, Real-time incident detection, Eyes on glass monitoring, Watchful eye on threats, Proactive cyber vigilance, Human-in-the-loop security, Australian cybersecurity consultant, Canberra cyber security services, ACT cybersecurity, SME cybersecurity support, Government cybersecurity consulting, ProtectiveEdge Cyber"
 sidebar:
   nav: "services"
+classes: wide
 ---
 
 Empowering your organisation with strategic security leadership through flexible, cost-effective services.
