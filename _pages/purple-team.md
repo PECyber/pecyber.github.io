@@ -5,6 +5,7 @@ keywords: "Purple team exercises, incident tabletop exercises, lessons learned p
 permalink: /purple-team/
 sidebar:
   nav: "services"
+classes: wide
 ---
 Enhance your cybersecurity posture through proactive and reactive purple team engagements with ProtectiveEdge Cyber.
 
