@@ -14,6 +14,16 @@
   {%- assign seo_description = seo_description | markdownify | strip_html | newline_to_br | strip_newlines | replace: '<br />', ' ' | escape_once | strip -%}
 {%- endif -%}
 
+{%- comment -%} ADDED: Build seo_keywords from page or site (supports string or list) {%- endcomment -%}
+{%- assign raw_keywords = page.keywords | default: site.keywords -%}
+{%- if raw_keywords -%}
+  {%- if raw_keywords.first -%}
+    {%- assign seo_keywords = raw_keywords | join: ", " -%}
+  {%- else -%}
+    {%- assign seo_keywords = raw_keywords | replace: "  ", " " | strip -%}
+  {%- endif -%}
+{%- endif -%}
+
 {% if seo_keywords %}
   <meta name="keywords" content="{{ seo_keywords }}">
 {% endif %}
