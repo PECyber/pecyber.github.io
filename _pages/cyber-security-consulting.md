@@ -5,6 +5,7 @@ keywords: "Cyber security consulting, procurement assistance, documentation upli
 permalink: /cyber-security-consulting/
 sidebar:
   nav: "services"
+classes: wide
 ---
 Comprehensive and tailored cyber security consulting to meet your organisational needs and enhance your security posture.
 
