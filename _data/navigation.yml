@@ -23,5 +23,7 @@ services:
         url: /audit-support/
       - title: "Consulting Services"
         url: /cyber-security-consulting/
+      - title: "SMB1001 Certification"
+        url: /smb1001/
 
         
