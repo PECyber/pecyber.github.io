@@ -1,6 +1,6 @@
 ---
 title: Purple Team Services
-description: "ProtectiveEdge Cyber offers proactive and reactive engagements to enhance your cybersecurity posture, including tabletop exercises, post-incident reviews and more."
+description: "Enhance your resilience with purple team exercises — including incident tabletop simulations, red team emulation, and SOC readiness assessments tailored to your organisation."
 keywords: "Purple team exercises, incident tabletop exercises, lessons learned post-incident, SOC emulation, red team emulation, ProtectiveEdge Cyber"
 permalink: /purple-team/
 sidebar:
