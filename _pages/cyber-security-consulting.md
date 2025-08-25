@@ -1,6 +1,6 @@
 ---
 title: Cyber Security Consulting
-description: "ProtectiveEdge Cyber offers cyber security consulting services, including procurement assistance, system security plan development, and targeted risk assessments."
+description: "ProtectiveEdge Cyber offers end-to-end cybersecurity consulting, including procurement support, documentation uplift, risk assessments, and system security planning."
 keywords: "Cyber security consulting, procurement assistance, documentation uplift, system security plan, targeted risk assessment, ProtectiveEdge Cyber"
 permalink: /cyber-security-consulting/
 sidebar:
