@@ -7,7 +7,7 @@ main:
     url: /about/
   - title: "Contact Us"
     url: /contact/
- - title: "Sign Up"
+  - title: "Sign Up"
     url: /signup/
 
 services:
