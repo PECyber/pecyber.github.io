@@ -5,6 +5,7 @@ keywords: "Cloud security, best practice cloud deployment, architecture review, 
 permalink: /cloud-security/
 sidebar:
   nav: "services"
+classes: wide
 ---
 Your partner in ensuring secure and efficient cloud environments with ProtectiveEdge Cyber.
 
