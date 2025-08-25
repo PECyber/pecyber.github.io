@@ -7,7 +7,6 @@ sidebar:
   nav: "services"
 ---
 
-# Virtual CISO (vCISO) Services
 Empowering your organisation with strategic security leadership through flexible, cost-effective services.
 
 ## Why Choose a Virtual CISO?
