@@ -5,6 +5,7 @@ keywords: "Cybersecurity, Cyber Security Consulting, Australian Cybersecurity, E
 permalink: /audit-support/
 sidebar:
   nav: "services"
+classes: wide
 ---
 
 ## Audit Support
