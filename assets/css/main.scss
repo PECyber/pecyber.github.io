@@ -1,94 +1,35 @@
 ---
 ---
-
 @charset "utf-8";
 
-/* =========================================================
-   Minimal Mistakes base imports
-   ========================================================= */
-@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
-@import "minimal-mistakes"; // theme core
+/* Base theme */
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+@import "minimal-mistakes";
 
 /* =========================================================
-   PECyber: Readability + Responsive “spread out” text
-   - Keep body copy at an ideal reading width by default
-   - Allow full-width when needed via `classes: wide`
-   - Bump type sizes slightly on larger screens
-   - Improve mobile wrapping and gutters
+   Readability: ideal text width + comfy line height
    ========================================================= */
-
-/* 1) Reading width + comfy line height + side gutters */
 .page__content {
-  max-width: 72ch;        /* ~72 characters per line for long-form readability */
-  line-height: 1.65;
+  max-width: 72ch;        /* ~72 characters per line */
+  line-height: 1.6;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1rem;     /* prevents text touching screen edges */
+  padding-left: 1rem;     /* gutters so text doesn’t hug edges */
   padding-right: 1rem;
 }
 
-/* Optional helper: force a narrower or wider reading width on specific sections */
-.page__content .readable-narrow { max-width: 60ch; }
-.page__content .readable-wide   { max-width: 85ch; }
-
-/* 2) Let specific pages go full width:
-      Add `classes: wide` in the page’s front matter */
+/* Allow full-width pages if you add 'classes: wide' in front matter */
 .wide .page__content { max-width: none; }
 
-/* 3) Global type scale: bump base copy on larger screens.
-      Using `body` with !important ensures we beat theme defaults cleanly. */
-@media (min-width: 768px)  { body { font-size: 18px !important; } }  /* ~12.5% up from 16px */
-@media (min-width: 1200px) { body { font-size: 19px !important; } }
-
-/* Belt-and-braces: ensure core body text elements scale with base */
-.page__content p,
-.page__content li,
-.page__content dd {
-  font-size: 1.0625rem; /* ~17px when base is 16px; scales further with media queries above */
-}
-
-/* Slightly more generous rhythm for lists on desktop */
-@media (min-width: 768px) {
-  .page__content ul,
-  .page__content ol {
-    margin-top: 0.75rem;
-    margin-bottom: 1rem;
-  }
-  .page__content li + li { margin-top: 0.35rem; }
-}
-
-/* 4) Headings: subtle scaling and spacing (keeps hierarchy crisp without looking huge) */
-.page__content h1,
-.page__content h2,
-.page__content h3 {
-  line-height: 1.25;
-}
-@media (min-width: 768px) {
-  .page__content h1 { font-size: 2rem;   } /* ≈32px @ base 16; scales with body */
-  .page__content h2 { font-size: 1.6rem; } /* ≈25.6px */
-  .page__content h3 { font-size: 1.3rem; } /* ≈20.8px */
-}
-
-/* 5) Mobile niceties: better word breaks & hyphenation */
+/* Better wrapping on narrow screens */
 .page__content p,
 .page__content li,
 .page__content blockquote {
   hyphens: auto;
   overflow-wrap: anywhere;
-  word-break: normal;
 }
 
-/* 6) Two-column helper for long sections:
-      Wrap a big Markdown section with `{: .text-columns}` */
-.text-columns {
-  column-count: 2;
-  column-gap: 2rem;
-}
-@media (max-width: 900px) {
-  .text-columns { column-count: 1; }
-}
-
-/* 7) Keep media responsive and not overly wide inside reading columns */
+/* Keep media responsive inside content */
 .page__content img,
 .page__content video,
 .page__content iframe {
@@ -96,32 +37,58 @@
   height: auto;
 }
 
-/* 8) Code blocks: prevent horizontal scrollbars busting the reading width */
-.page__content pre {
-  white-space: pre-wrap;    /* wrap long code lines */
-  word-wrap: break-word;
+/* Optional: two-column helper for long text sections */
+.text-columns { column-count: 2; column-gap: 2rem; }
+@media (max-width: 900px) { .text-columns { column-count: 1; } }
+
+/* =========================================================
+   Side Banners (safe with Minimal Mistakes)
+   - Pads the theme’s containers instead of squeezing content
+   ========================================================= */
+:root {
+  --banner-w: 120px;       /* visual width of each side banner */
+  --content-gutter: 20px;  /* extra breathing room */
 }
 
-/* 9) Optional: widen archives/home if you want cards to breathe more while
-      keeping text posts comfortable. Add `classes: wide` on those pages. */
-.wide .archive { padding-left: 1rem; padding-right: 1rem; }
-
-/* 10) Optional: callout/lead paragraph helper for hero intros */
-.lead {
-  font-size: 1.125rem;  /* ~18px on 16px base; scales up with media queries */
-  line-height: 1.7;
-  margin-bottom: 1rem;
+/* Pad content so it doesn’t sit under the banners (desktop only) */
+@media (min-width: 992px) {
+  .initial-content,
+  .page__footer {
+    padding-left: calc(var(--banner-w) + var(--content-gutter));
+    padding-right: calc(var(--banner-w) + var(--content-gutter));
+  }
 }
 
-/* 11) Ensure sidebar (if present) doesn’t cramp copy-heavy pages on desktop */
-@media (min-width: 1100px) {
-  .sidebar { max-width: 320px; }
+/* Fixed banners */
+.side-banner {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: var(--banner-w);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;                 /* visible, but below header overlays */
+  background: transparent;
+  pointer-events: none;       /* don't block clicks on content */
 }
 
-/* 12) Tiny tweak: make tables scroll on small screens without breaking layout */
-.page__content table {
+.side-banner.left  { left: 0; }
+.side-banner.right { right: 0; }
+
+.side-banner img {
+  max-height: 90vh;
+  width: auto;
+  height: auto;
   display: block;
-  width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide banners and remove padding on small screens */
+@media (max-width: 991.98px) {
+  .side-banner { display: none; }
+  .initial-content,
+  .page__footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
