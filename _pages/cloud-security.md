@@ -1,6 +1,6 @@
 ---
 title: Cloud Security Services
-description: "ProtectiveEdge Cyber provides comprehensive cloud security services, including best practice deployment, security hardening, and general cloud security advice."
+description: "Secure your cloud with ProtectiveEdge Cyber — offering architecture reviews, security hardening, and best-practice advice for safe and resilient cloud deployments."
 keywords: "Cloud security, best practice cloud deployment, architecture review, security hardening, cloud security advice, ProtectiveEdge Cyber"
 permalink: /cloud-security/
 sidebar:
