@@ -4,6 +4,7 @@ keywords: "Cybersecurity, Cyber Security Consulting, Australian Cybersecurity, E
 permalink: /
 title: ProtectiveEdege Cyber (PECyber)
 classes: wide
+sidebar: false
 ---
 
 Your trusted partner in cybersecurity consulting, based in Australia.
