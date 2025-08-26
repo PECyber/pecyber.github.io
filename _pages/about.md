@@ -4,6 +4,7 @@ description: "Learn about ProtectiveEdge Cyber — an Australian-based cybersecu
 keywords: "Cybersecurity, Cyber Security Consulting, Australian Cybersecurity, E8 Assessment, Purple Team Exercises, Cloud Security, Virtual CISO, Audit Preparation, IRAP Compliance, ISO27001, NIST Audit, Security Hardening, ASD Essential 8, Proactive Cybersecurity, Reactive Cybersecurity, Security Posture, Cybersecurity Defences, Cybersecurity Leadership, Cybersecurity Services, Consulting Services"
 permalink: /about/
 classes: wide
+sidebar: false
 ---
 At ProtectiveEdge Cyber, we are dedicated to enhancing the cybersecurity stance of Australian businesses and government entities. Our mission is to protect our clients against ever-evolving cyber threats with tailored, robust, and comprehensive security solutions.
 
