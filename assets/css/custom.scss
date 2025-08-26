@@ -1,0 +1,48 @@
+/* --- Homepage: remove left sidebar & use full width --- */
+.layout--home .page__sidebar,
+.layout--home .sidebar {
+  display: none !important;
+}
+
+/* Force the main grid to single-column on home */
+.layout--home .page {
+  display: block !important;            /* override the theme grid */
+}
+
+/* Make the inner wrap a comfortable, centered width */
+.layout--home .page__inner-wrap {
+  max-width: 1100px;                    /* adjust to taste */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* --- Homepage: disable automatic hyphenation and hard breaks --- */
+.layout--home .page__title,
+.layout--home .page__lead,
+.layout--home .page__content,
+.layout--home .page__content p,
+.layout--home .page__content li,
+.layout--home .page__content h1,
+.layout--home .page__content h2,
+.layout--home .page__content h3,
+.layout--home .page__content h4,
+.layout--home .page__content h5,
+.layout--home .page__content h6 {
+  hyphens: none !important;
+  -webkit-hyphens: none !important;
+  -ms-hyphens: none !important;
+
+  word-break: keep-all;        /* don’t split words */
+  overflow-wrap: normal;       /* default wrapping */
+}
+
+/* On very narrow screens, allow gentler wrapping if needed */
+@media (max-width: 480px) {
+  .layout--home .page__content p,
+  .layout--home .page__content li {
+    overflow-wrap: anywhere;   /* wrap long URLs/very long words without hyphen */
+    word-break: normal;
+  }
+}
