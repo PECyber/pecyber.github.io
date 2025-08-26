@@ -3,12 +3,26 @@ title: Newsletter Signup
 description: "Signup to stay informed on the Essential8"
 keywords: "Cybersecurity, Cyber Security Consulting, Australian Cybersecurity, E8 Assessment, Purple Team Exercises, Cloud Security, Virtual CISO, Audit Preparation, IRAP Compliance, ISO27001, NIST Audit, Security Hardening, ASD Essential 8, Proactive Cybersecurity, Reactive Cybersecurity, Security Posture, Cybersecurity Defences, Cybersecurity Leadership, Cybersecurity Services, Consulting Services"
 permalink: /signup/
+classes: wide
 ---
 
-## Stay Informed on the ASD Essential 8
+## Stay Informed on the ASD Essential 8  
 
-Sign up to receive notifications from PECyber and stay up to date with best practices for the ASD Essential 8.
-<!-- Begin PECyber-styled Mailchimp form -->
+Cybersecurity is constantly evolving, and staying ahead means keeping informed about the latest updates, strategies, and best practices. The **ASD Essential 8 (E8)** provides a practical and effective framework for building cyber resilience, but understanding how to apply and improve on these strategies can be challenging without trusted guidance.  
+
+By signing up to our PECyber mailing list, you’ll receive:  
+
+- **Timely updates** on changes and recommendations from the Australian Signals Directorate (ASD).  
+- **Practical tips and guidance** for improving your organisation’s maturity against the Essential 8.  
+- **Insights from real-world consulting**—lessons learned from Australian businesses and government entities.  
+- **Invitations to PECyber resources** including readiness quizzes, guides, and webinars.  
+- **Actionable reminders** to help keep your security strategy on track throughout the year.  
+
+This isn’t just another newsletter—it’s a curated set of insights designed to help **Australian organisations strengthen their cyber resilience**.  
+
+📩 **Join today** and take the first step toward making the Essential 8 work for you. Together, we can simplify cybersecurity and ensure your organisation is prepared for the threats of today and tomorrow.  
+
+
 <style>
   /* Scope everything so we don't affect the rest of the site */
   #mc_embed_signup {
@@ -118,4 +132,8 @@ Sign up to receive notifications from PECyber and stay up to date with best prac
     </div>
   </form>
 </div>
-<!-- End PECyber-styled Mailchimp form -->
+
+---
+
+### Your Privacy Matters  
+We respect your inbox—PECyber will only send you relevant updates and resources. We will never share your information with third parties, and you can unsubscribe at any time with a single click.  
