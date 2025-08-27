@@ -8,8 +8,6 @@ sidebar:
 classes: wide
 ---
 
-# Virtual CISO (vCISO) Services
-
 Every organisation needs strong cyber security leadership, but not every organisation can justify the cost of a full-time Chief Information Security Officer. That’s where our **Virtual CISO (vCISO) services** come in. A vCISO provides the same strategic guidance, governance, and leadership as a traditional CISO—delivered flexibly, at a fraction of the cost.  
 
 At PECyber, our Virtual CISOs partner with you to **develop security strategy, manage risk, achieve compliance, and uplift resilience**. Whether you’re an SME, government agency, or service provider, we give you executive-level cyber security leadership—without the overhead.
