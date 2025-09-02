@@ -147,8 +147,9 @@
 
   <input type="hidden" name="score" id="scoreField">
   <input type="hidden" name="summary" id="summaryField">
+  <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"> <!-- honeypot -->
 
-  <button type="submit">Submit</button>
+  <button type="submit" id="submitBtn">Submit</button>
 </form>
 
 <div id="result" class="result" style="display:none;"></div>
@@ -156,62 +157,59 @@
   <strong>Thank you!</strong> Your submission has been received.
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script>
-  // Attach one submit handler
-  document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('quizForm');
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+<script defer>
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('quizForm');
+  const submitBtn = document.getElementById('submitBtn');
 
-    form.addEventListener('submit', async (event) => {
-      event.preventDefault();
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();               // ← stops the redirect
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
 
-      // Native validation (required + email format)
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
+    // Calculate score
+    const { score, max, summary } = calculateScore(form);
+
+    // Update hidden fields BEFORE building FormData
+    document.getElementById('scoreField').value = `${score}/${max}`;
+    document.getElementById('summaryField').value = summary;
+
+    // Show result + PDF button
+    const resultDiv = document.getElementById('result');
+    resultDiv.style.display = 'block';
+    resultDiv.innerHTML = `<h2>Your Cyber Readiness Score: ${score}/${max}</h2><p>${summary}</p>`;
+    const pdfBtn = document.createElement('button');
+    pdfBtn.type = 'button';
+    pdfBtn.textContent = 'Download PDF Report';
+    pdfBtn.onclick = () => generatePDF(score, max);
+    resultDiv.appendChild(pdfBtn);
+
+    // Submit via AJAX to Formspree (no redirect)
+    submitBtn.disabled = true;
+    try {
+      const resp = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      const data = await resp.json().catch(() => ({}));
+      if (resp.ok) {
+        document.getElementById('confirmationMessage').style.display = 'block';
+        form.reset();
+      } else {
+        const msg = (data && data.errors) ? data.errors.map(e => e.message).join('\n')
+                                          : `Formspree error: HTTP ${resp.status}`;
+        alert(msg);
       }
-
-      // Calculate score
-      const { score, max, summary } = calculateScore(form);
-
-      // Show result
-      const resultDiv = document.getElementById('result');
-      resultDiv.style.display = 'block';
-      resultDiv.innerHTML = `<h2>Your Cyber Readiness Score: ${score}/${max}</h2><p>${summary}</p>`;
-
-      const pdfBtn = document.createElement('button');
-      pdfBtn.type = 'button';
-      pdfBtn.textContent = 'Download PDF Report';
-      pdfBtn.onclick = () => generatePDF(score, max);
-      resultDiv.appendChild(pdfBtn);
-
-      // Populate hidden fields BEFORE creating FormData
-      document.getElementById('scoreField').value = `${score}/${max}`;
-      document.getElementById('summaryField').value = summary;
-
-      // Submit to Formspree
-try {
-  const resp = await fetch(form.action, {
-    method: 'POST',
-    body: new FormData(form),
-    headers: { 'Accept': 'application/json' }
+    } catch (e) {
+      alert('Network error submitting the form.');
+    } finally {
+      submitBtn.disabled = false;
+    }
   });
-
-  const data = await resp.json().catch(() => ({}));
-
-  if (resp.ok) {
-    document.getElementById('confirmationMessage').style.display = 'block';
-    form.reset();
-  } else {
-    const msg = (data && data.errors)
-      ? data.errors.map(e => e.message).join('\n')
-      : `Formspree error: HTTP ${resp.status}`;
-    alert(msg);
-  }
-} catch (e) {
-  alert('Network error submitting the form.');
-}
-
 
   function calculateScore(form) {
     let score = 0;
@@ -220,7 +218,6 @@ try {
       const v = Number(sel.value);
       if (!Number.isNaN(v)) score += v;
     });
-
     const max = 46;
     let summary = '';
     if (score >= 38) {
@@ -249,5 +246,6 @@ try {
     doc.text(line, 20, 50);
     doc.save("PECyber_E8_Assessment.pdf");
   }
+});
 </script>
 </body>
