@@ -1,24 +1,18 @@
 <body>
-<form id="quizForm" method="POST" action="https://formspree.io/f/xvgaoang">
-<style>
-  .question {
-    margin-bottom: 2rem;
-  }
-
-  select,
-  select option {
-    color: #000; /* Change to #fff if using a dark background */
-    background-color: #fff; /* Change to #2a2a2a for dark themes */
-    border: 1px solid #ccc;
-    padding: 0.4em;
-    font-size: 1em;
-  }
-
-  select:disabled,
-  select option:disabled {
-    color: #aaa;
-  }
-</style>
+<form id="quizForm" method="POST" action="https://formspree.io/f/xvgaoang" novalidate>
+  <style>
+    .question { margin-bottom: 2rem; }
+    select, select option {
+      color: #000;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 0.4em;
+      font-size: 1em;
+    }
+    select:disabled, select option:disabled { color: #aaa; }
+    .result { margin-top: 1rem; }
+  </style>
+  
   <div class="question">
     <b><label>Application Control</label></b>
     <label>Is a baseline of approved applications maintained and enforced?</label>
@@ -145,30 +139,77 @@
   <br><br>
   <div class="question">
     <label for="name">Name:</label>
-    <input type="name" id="name" name="name" required style="width:100%; padding:8px;">
+    <input type="text" id="name" name="name" required style="width:100%; padding:8px;">
 
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" required style="width:100%; padding:8px;">
   </div>
+
   <input type="hidden" name="score" id="scoreField">
   <input type="hidden" name="summary" id="summaryField">
 
-  <button type="button" onclick="calculateScore()">Submit</button>
+  <button type="submit">Submit</button>
 </form>
 
 <div id="result" class="result" style="display:none;"></div>
-<div id="confirmationMessage" class="result" style="display:none; background:#dff0d8; color:#3c763d; margin-top: 20px; padding: 10px; border: 1px solid #d6e9c6;">
+<div id="confirmationMessage" class="result" style="display:none; background:#dff0d8; color:#3c763d; margin-top:20px; padding:10px; border:1px solid #d6e9c6;">
   <strong>Thank you!</strong> Your submission has been received.
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<button type="button" onclick="calculateScore()">Submit</button>
 <script>
-  function calculateScore() {
+  // Attach one submit handler
+  document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('quizForm');
-    let score = 0;
 
-    // Sum all <select> values
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      // Native validation (required + email format)
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      // Calculate score
+      const { score, max, summary } = calculateScore(form);
+
+      // Show result
+      const resultDiv = document.getElementById('result');
+      resultDiv.style.display = 'block';
+      resultDiv.innerHTML = `<h2>Your Cyber Readiness Score: ${score}/${max}</h2><p>${summary}</p>`;
+
+      const pdfBtn = document.createElement('button');
+      pdfBtn.type = 'button';
+      pdfBtn.textContent = 'Download PDF Report';
+      pdfBtn.onclick = () => generatePDF(score, max);
+      resultDiv.appendChild(pdfBtn);
+
+      // Populate hidden fields BEFORE creating FormData
+      document.getElementById('scoreField').value = `${score}/${max}`;
+      document.getElementById('summaryField').value = summary;
+
+      // Submit to Formspree
+      try {
+        const resp = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (resp.ok) {
+          document.getElementById('confirmationMessage').style.display = 'block';
+          form.reset();
+        } else {
+          alert('There was a problem submitting your form.');
+        }
+      } catch (e) {
+        alert('Network error submitting the form.');
+      }
+    });
+  });
+
+  function calculateScore(form) {
+    let score = 0;
     const selects = form.querySelectorAll('select');
     selects.forEach(sel => {
       const v = Number(sel.value);
@@ -176,9 +217,6 @@
     });
 
     const max = 46;
-    const name = form.name?.value || "Unknown";
-    const email = form.email?.value || "Unknown";
-
     let summary = '';
     if (score >= 38) {
       summary = "Excellent! Your organisation shows a strong cyber maturity. Contact PECyber for tailored continuous improvement strategies.";
@@ -187,34 +225,24 @@
     } else {
       summary = "Your cyber maturity may be low. PECyber recommends a comprehensive review and uplift journey.";
     }
+    return { score, max, summary };
+  }
 
-    // Populate hidden fields BEFORE building FormData for fetch
-    document.getElementById('scoreField').value = `${score}/${max}`;
-    document.getElementById('summaryField').value = summary;
-
-    const resultDiv = document.getElementById('result');
-    resultDiv.style.display = 'block';
-    resultDiv.innerHTML = `<h2>Your Cyber Readiness Score: ${score}/${max}</h2><p>${summary}</p>`;
-
-    const button = document.createElement('button');
-    button.textContent = 'Download PDF Report';
-    button.onclick = () => generatePDF(score);
-    resultDiv.appendChild(button);
-
-    // Post to Formspree
-    fetch(form.action, {
-      method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    }).then(response => {
-      if (response.ok) {
-        document.getElementById('confirmationMessage').style.display = 'block';
-        form.reset();
-      } else {
-        alert('There was a problem submitting your form.');
-      }
-    });
+  function generatePDF(score, max) {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    doc.setFontSize(16);
+    doc.text("PECyber - Essential 8 Self Assessment", 20, 20);
+    doc.setFontSize(12);
+    doc.text(`Score: ${score}/${max}`, 20, 30);
+    doc.text("Assessment Summary:", 20, 40);
+    const line = (score >= 38)
+      ? "Strong cyber maturity. Contact PECyber for ongoing improvement."
+      : (score >= 28)
+        ? "Moderate maturity. PECyber can help with deeper assessments."
+        : "Low maturity. PECyber recommends a full Essential 8 uplift.";
+    doc.text(line, 20, 50);
+    doc.save("PECyber_E8_Assessment.pdf");
   }
 </script>
-
 </body>
