@@ -190,23 +190,28 @@
       document.getElementById('summaryField').value = summary;
 
       // Submit to Formspree
-      try {
-        const resp = await fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        });
-        if (resp.ok) {
-          document.getElementById('confirmationMessage').style.display = 'block';
-          form.reset();
-        } else {
-          alert('There was a problem submitting your form.');
-        }
-      } catch (e) {
-        alert('Network error submitting the form.');
-      }
-    });
+try {
+  const resp = await fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
   });
+
+  const data = await resp.json().catch(() => ({}));
+
+  if (resp.ok) {
+    document.getElementById('confirmationMessage').style.display = 'block';
+    form.reset();
+  } else {
+    const msg = (data && data.errors)
+      ? data.errors.map(e => e.message).join('\n')
+      : `Formspree error: HTTP ${resp.status}`;
+    alert(msg);
+  }
+} catch (e) {
+  alert('Network error submitting the form.');
+}
+
 
   function calculateScore(form) {
     let score = 0;
